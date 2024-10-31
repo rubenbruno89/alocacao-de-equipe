@@ -1,0 +1,283 @@
+<html><head><base href="." /><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Kanban - Equipe de Fiscalização</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    padding: 20px;
+}
+
+.kanban {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    min-height: calc(100vh - 40px);
+}
+
+.column {
+    background: #ebecf0;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 300px;
+    padding: 12px;
+}
+
+.column-header {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px;
+    color: #172b4d;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #dfe1e6;
+}
+
+.card {
+    background: white;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    cursor: move;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card-actions {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: none;
+}
+
+.card:hover .card-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.card-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    color: #666;
+    border-radius: 3px;
+}
+
+.card-action-btn:hover {
+    background: #f0f0f0;
+    color: #172b4d;
+}
+
+.delete-btn:hover {
+    color: #dc3545;
+}
+
+.add-card {
+    padding: 8px;
+    color: #5e6c84;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.add-card:hover {
+    background: #dfe1e6;
+}
+
+.card-title {
+    color: #172b4d;
+    font-weight: 500;
+    padding-right: 60px;
+}
+
+.top-bar {
+    background: #026aa7;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<div class="top-bar">
+    <h1>Kanban - Equipe de Fiscalização</h1>
+</div>
+<div class="kanban">
+    <div class="column">
+        <div class="column-header">Coordenação</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Coordenador</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+
+    <div class="column">
+        <div class="column-header">Chefe de Sala</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Chefe de Sala</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+    
+    <div class="column">
+        <div class="column-header">Fiscal de Sala</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Fiscal de Sala</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+    
+    <div class="column">
+        <div class="column-header">Fiscal Volante</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Fiscal Volante</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+    
+    <div class="column">
+        <div class="column-header">Fiscal de Banheiro</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Fiscal de Banheiro</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+    
+    <div class="column">
+        <div class="column-header">Equipe Especializada</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Membro da Equipe</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+    
+    <div class="column">
+        <div class="column-header">Equipe da Escola</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar Membro da Escola</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+    
+    <div class="column">
+        <div class="column-header">Reserva</div>
+        <div class="card" draggable="true">
+            <div class="card-title" contenteditable="true">Adicionar à Reserva</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        </div>
+        <div class="add-card">+ Adicionar outro cartão</div>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.add-card').forEach(button => {
+    button.addEventListener('click', function() {
+        const column = this.parentElement;
+        const newCard = document.createElement('div');
+        newCard.className = 'card';
+        newCard.draggable = true;
+        newCard.innerHTML = `
+            <div class="card-title" contenteditable="true">Novo membro da equipe</div>
+            <div class="card-actions">
+                <button class="card-action-btn edit-btn">✏️</button>
+                <button class="card-action-btn delete-btn">🗑️</button>
+            </div>
+        `;
+        column.insertBefore(newCard, this);
+        setupCardListeners(newCard);
+    });
+});
+
+function setupCardListeners(card) {
+    const deleteBtn = card.querySelector('.delete-btn');
+    const editBtn = card.querySelector('.edit-btn');
+    const cardTitle = card.querySelector('.card-title');
+
+    deleteBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (confirm('Tem certeza que deseja excluir este card?')) {
+            card.remove();
+        }
+    });
+
+    editBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        cardTitle.focus();
+    });
+}
+
+// Setup existing cards
+document.querySelectorAll('.card').forEach(setupCardListeners);
+
+let dragged = null;
+
+document.addEventListener('dragstart', function(event) {
+    if (event.target.className.includes('card')) {
+        dragged = event.target;
+        event.target.style.opacity = '0.5';
+    }
+});
+
+document.addEventListener('dragend', function(event) {
+    if (event.target.className.includes('card')) {
+        event.target.style.opacity = '1';
+    }
+});
+
+document.querySelectorAll('.column').forEach(column => {
+    column.addEventListener('dragover', function(event) {
+        event.preventDefault();
+    });
+
+    column.addEventListener('drop', function(event) {
+        event.preventDefault();
+        if (dragged) {
+            const addCard = this.querySelector('.add-card');
+            this.insertBefore(dragged, addCard);
+        }
+    });
+});
+</script>
+</body></html>
